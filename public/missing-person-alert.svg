@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+    <linearGradient id="overlay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(15,23,42,0.25)" />
+      <stop offset="100%" stop-color="rgba(15,23,42,0.7)" />
+    </linearGradient>
+  </defs>
+  <image href="placeholder-user.jpg" x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice" filter="url(#blur)" />
+  <rect width="1200" height="630" fill="url(#overlay)" />
+  <rect x="150" y="440" width="900" height="140" fill="#b91c1c" rx="18" />
+  <text x="600" y="520" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="68" font-weight="700" fill="#f8fafc">MISSING PERSON ALERT</text>
+</svg>

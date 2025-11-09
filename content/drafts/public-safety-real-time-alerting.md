@@ -9,7 +9,7 @@ createdAt: 2025-02-14
 image: /government-alerts-uk.jpg
 ---
 
-When terror suspect Daniel Abed Khalife escaped HMP Wandsworth in September 2023, media coverage highlighted how commuters learned of the search through rolling news and social feeds before official alerts could be issued. In January 2024, the Metropolitan Police were again forced into a citywide appeal after a violent offender was released from custody in error; residents circulated the person’s name through viral WhatsApp forwards long before verified details were published. In both incidents, officers reported heavy call volumes, yet many tips arrived too late to be useful.
+When a high-profile terror suspect escaped from a London prison in late 2023, media coverage highlighted how commuters first learned of the search through rolling news updates and social feeds rather than direct police alerts. A few months later, a violent offender was mistakenly released from custody and a citywide appeal followed; residents traded unverified screenshots long before official details were published. In both incidents, speculation travelled faster than verified updates, making it harder to capture timely, actionable sightings.
 
 These incidents are reminders that social media virality is not the same as situational awareness. Rumours move faster than official statements, photos are reposted without context, and inaccurate descriptions spread within minutes. A modern public safety response needs infrastructure that matches that velocity while preserving accuracy, auditability, and two-way communication. Otherwise, the rumour mill outruns the people trying to keep communities safe.
 
