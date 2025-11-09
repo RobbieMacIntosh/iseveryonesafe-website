@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+node_modules
+.next
+out # ensure they stay ignored
+node_modules
+.next
+out # ensure they stay ignored
+node_modules
+.next
+out
+node_modules
+.next
+out

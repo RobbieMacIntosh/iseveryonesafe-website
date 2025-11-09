@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.iseveryonesafe.iseveryonesafe",
+      "sha256_cert_fingerprints": [
+        "EC:D2:00:85:59:5D:B3:2F:A4:DC:E2:A2:5C:C2:93:D6:BE:28:58:95:12:F1:18:76:32:54:57:3B:7C:48:78:0A"
+      ]
+    }
+  }
+]

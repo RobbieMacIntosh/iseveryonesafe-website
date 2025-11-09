@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "GJXC7X7RGF.com.iseveryonesafe.app",
+        "paths": ["/join/*", "/join/cohort/*"]
+      }
+    ]
+  }
+}

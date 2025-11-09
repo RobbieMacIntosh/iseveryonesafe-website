@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Group - Is Everyone Safe</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #ffffff;
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      background: #BFF234;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #BFF234;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    .download-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #BFF234;
+      color: #000;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+    .download-btn:hover {
+      transform: scale(1.05);
+    }
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: #BFF234;
+      animation: spin 1s ease-in-out infinite;
+      margin-top: 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🛡️</div>
+    <h1>Join Safety Group</h1>
+    <p>You've been invited to join a safety monitoring group.</p>
+    <p>Download the Is Everyone Safe app to accept this invitation and stay connected.</p>
+    <a href="#" id="downloadBtn" class="download-btn">Download App</a>
+    <div class="spinner" id="spinner" style="display:none;"></div>
+    <p id="redirectText" style="display:none; font-size:14px; margin-top:20px;">
+      Redirecting to App Store...
+    </p>
+  </div>
+
+  <script>
+    // Get cohort ID from URL
+    const pathParts = window.location.pathname.split('/');
+    const cohortId = pathParts[pathParts.length - 1];
+
+    // Detect platform
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
+
+    // Store cohort ID for later (when app is installed)
+    if (cohortId) {
+      localStorage.setItem('pendingCohortId', cohortId);
+    }
+
+    // Set up download button
+    const downloadBtn = document.getElementById('downloadBtn');
+    const spinner = document.getElementById('spinner');
+    const redirectText = document.getElementById('redirectText');
+
+    let appStoreUrl = '';
+    if (isIOS) {
+      appStoreUrl = 'https://apps.apple.com/app/is-everyone-safe/YOUR_APP_ID';
+      downloadBtn.textContent = 'Download on App Store';
+    } else if (isAndroid) {
+      appStoreUrl = 'https://play.google.com/store/apps/details?id=com.iseveryonesafe.app';
+      downloadBtn.textContent = 'Get it on Google Play';
+    } else {
+      downloadBtn.textContent = 'Download App';
+    }
+
+    downloadBtn.href = appStoreUrl;
+
+    // Try to open app first (if installed)
+    const appUrl = `iseveryonesafe://join/cohort/${cohortId}`;
+    window.location = appUrl;
+
+    // If app doesn't open in 2 seconds, show download option
+    setTimeout(() => {
+      downloadBtn.style.display = 'inline-block';
+    }, 2000);
+
+    // Handle download button click
+    downloadBtn.addEventListener('click', (e) => {
+      if (appStoreUrl) {
+        spinner.style.display = 'inline-block';
+        redirectText.style.display = 'block';
+        downloadBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
