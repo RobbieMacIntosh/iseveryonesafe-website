@@ -13,7 +13,7 @@ const nextConfig = {
     return [
       {
         source: '/app/:path*',
-        destination: 'https://app.iseveryonesafe.com/app/:path*',
+        destination: 'https://bapp.iseveryonesafe.com/app/:path*',
         permanent: true,
       },
       {
